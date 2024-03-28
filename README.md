@@ -7,7 +7,7 @@ We plan to implement an optimized attention layer to speedup mixture of experts 
 
 BACKGROUND:
 The focus of our project is on accelerating the inference phase of Large Language Models (LLMs) employing a Mixture of Experts (MoE) framework, specifically, by optimizing the attention layer on NVIDIA GPUs.  LLMs, particularly those utilizing MoE, are known for their ability to handle a wide range of complex tasks in natural language processing, from translation to domain specific knowledge. The MoE approach involves routing inputs to the most relevant 'expert' neural networks among a larger pool, depending on the specific task given by the user. This method allows for more specialized and efficient processing but introduces significant computational overhead, especially in the attention mechanism that determines the routing. The attention layer is pivotal in MoE models as it dynamically assigns different parts of the input data to the most relevant experts. This process, however, is highly compute-intensive, because it involves large matrix multiplications and data transformations that can become bottlenecks during inference, especially when handling large input sequences or a high number of experts.
-
+![Example of MoE](moe.png)
 Parallelism can significantly benefit this aspect of MoE LLMs for several reasons:
 
 1. Matrix Multiplications: The attention mechanism's core operations involve matrix multiplications that are inherently parallelizable. Each multiplication operation is independent and can be distributed across multiple GPU cores.
