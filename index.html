@@ -21,6 +21,18 @@
         <div id=final>
             <a href="15418_Final_Report.pdf"> Final Report </a>
         </div>
-        
+
+        <div id="sec1">
+            In this project, our goal was to create an N-body galaxy simulation by implementing a Tree-Particle Mesh algorithm which combined a Barnes-Hut Tree algorithm with a Particle Mesh algorithm to utilize the advantages of each algorithm in force calculations between particles in space. We intended to utilize the Barnes-Hut algorithm to perform force calculations for particles in close proximity (in high density regions) and Particle Mesh algorithm to perform force calculations on a particle.
+        </div>
+
+        <div id="sec2">
+            The first of the algorithms that we utilize is the Barnes Hut algorithm. The defining feature of a Barnes-Hut algorithm is its use of a quadtree to sort the particles of the simulation by spatial proximity, with each node containing either particles or additional leaf nodes containing particles. 
+        </div>
+
+        <div id="sec3">
+            Once the quadtree has been constructed and all particles have been placed within the data structure, the forces on each particle are calculated by traversing the quadtree. The force calculations are performed using several mathematical equations based on Newton’s Law of Universal Gravitation, which we will not talk about here because they are not relevant to the advantages of this algorithm. 
+For nodes that are sufficiently far away from the particle in question, the group of particles in a distant node is treated as a single entity with their combined mass located at their center of mass. This approximation greatly reduces the number of interactions that need to be computed. It is this approximation that we aim to solve with the Particle Mesh algorithm rather than the Barnes Hut tree to increase the accuracy of our simulation with regards to the forces of far away particles acting on a particle in question.
+        </div>
     </body>
 </html>
